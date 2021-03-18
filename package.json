@@ -42,14 +42,14 @@
     }
   },
   "lint-staged": {
-    "*.@(js|ts|jsx|tsx|graphql)": [
+    "**/*.+(js|ts|tsx)": [
       "yarn lint",
       "yarn format"
     ],
-    "*.@(json|html)": [
+    "**/*.+(json|html)": [
       "yarn format"
     ],
-    "*.@(css|sass|less|scss)": [
+    "**/*.+(css|sass|less|scss)": [
       "stylefmt",
       "stylelint --fix",
       "yarn format"

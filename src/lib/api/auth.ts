@@ -27,9 +27,7 @@ async function login(payload: LoginInterface): Promise<any> {
 }
 
 function logout(): Promise<void> {
-  Cookies.remove('_aId');
   Cookies.remove(config.TOKEN);
-
   return Promise.resolve();
 }
 

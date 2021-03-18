@@ -51,6 +51,7 @@ function AuthProvider(props: PropsWithChildren<Record<string, unknown>>) {
 
   async function handleLogout() {
     await authClient.logout();
+    queryClient.clear();
     window.location.href = '/login';
   }
 

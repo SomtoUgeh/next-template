@@ -2,12 +2,31 @@ import '../styles/global.css';
 import { theme } from 'styles/theme';
 import { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
+import { AuthProvider } from 'context/AuthContext';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: false,
+      useErrorBoundary: false,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider resetCSS theme={theme}>
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <QueryClientProvider client={queryClient}>
+      <ChakraProvider resetCSS theme={theme}>
+        <AuthProvider>
+          <Component {...pageProps} />
+        </AuthProvider>
+      </ChakraProvider>
+
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
   );
 }
 

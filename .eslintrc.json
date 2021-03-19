@@ -2,10 +2,9 @@
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "react-hooks", "jsx-a11y"],
   "extends": [
+    "react-app",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "react-app",
-    "react-app/jest",
     "plugin:jsx-a11y/recommended",
     "prettier"
   ],

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { config } from 'config';
 import jwt_decode from 'jwt-decode';
 import { useRouter } from 'next/router';
@@ -22,15 +22,15 @@ function checkTokenIsValid(actionFn: () => void) {
 
 export function ProtectedRoutes(
   props: React.PropsWithChildren<Record<string, unknown>>
-) {
+): React.ReactElement {
   const router = useRouter();
   const { handleLogout } = useAuth();
 
   const { reset } = useIdleTimer({
     timeout: config.TIME_OUT,
     onIdle: () => {
-      handleLogout();
       // do something here
+      handleLogout();
     },
     onActive: () => reset(),
     debounce: 250,
@@ -53,13 +53,16 @@ export function ProtectedRoutes(
   }, [status, user]);
 
   if (status === 'loading') return <FullPageSpinner />;
-  if (status === 'success' && user?.isVerified) return props.children;
+  if (status === 'success' && user?.isVerified) {
+    return <React.Fragment>{props.children}</React.Fragment>;
+  }
+
   return <FullPageSpinner />;
 }
 
 export function AuthRoutes(
   props: React.PropsWithChildren<Record<string, unknown>>
-) {
+): React.ReactElement {
   const router = useRouter();
   const { user, status } = useUserDetails();
 
@@ -69,6 +72,9 @@ export function AuthRoutes(
   }, [user, status]);
 
   if (status === 'loading') return <FullPageSpinner />;
-  if (status === 'success' && user === null) return props.children;
+  if (status === 'success' && user === null) {
+    return <React.Fragment>{props.children}</React.Fragment>;
+  }
+
   return <FullPageSpinner />;
 }

@@ -4,7 +4,7 @@ import Cookies from 'js-cookie';
 type CookieKey = string;
 type CookieValue = string | undefined | null;
 
-function getValueFromCookie(value: CookieKey) {
+function getValueFromCookie(value: CookieKey): CookieValue {
   let result: CookieValue = null;
   const cookieResponse: CookieValue = Cookies.get(value);
 

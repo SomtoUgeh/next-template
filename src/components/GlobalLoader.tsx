@@ -1,13 +1,12 @@
 import { css } from '@emotion/react';
 import { useIsFetching } from 'react-query';
-import { Spinner } from '@chakra-ui/spinner';
-import { SpinnerProps } from '@chakra-ui/react';
+import { Spinner } from './Loaders';
 
 export function GlobalLoader() {
   const isFetching = useIsFetching();
 
   return (
-    <Loader
+    <Spinner
       css={css`
         top: 0.5rem;
         right: 0.5rem;
@@ -19,8 +18,4 @@ export function GlobalLoader() {
       }}
     />
   );
-}
-
-function Loader(props: SpinnerProps) {
-  return <Spinner size="sm" {...props} />;
 }

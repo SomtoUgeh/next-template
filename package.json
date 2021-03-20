@@ -58,16 +58,15 @@
   },
   "lint-staged": {
     "**/*.+(js|ts|tsx)": [
-      "yarn lint",
-      "yarn format"
+      "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js",
+      "stylelint --fix \"**/*.{css,scss,sass}\" && prettier --ignore-path .gitignore --write \"**/*.+(js|ts|tsx|json|html|md)\""
     ],
     "**/*.+(json|html)": [
-      "yarn format"
+      "stylelint --fix \"**/*.{css,scss,sass}\" && prettier --ignore-path .gitignore --write \"**/*.+(js|ts|tsx|json|html|md)\""
     ],
     "**/*.+(css|sass|less|scss)": [
       "stylefmt",
-      "stylelint --fix",
-      "yarn format"
+      "stylelint --fix \"**/*.{css,scss,sass}\" && prettier --ignore-path .gitignore --write \"**/*.+(js|ts|tsx|json|html|md)\""
     ]
   }
 }

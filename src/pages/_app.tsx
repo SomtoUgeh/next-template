@@ -2,7 +2,7 @@ import '../styles/global.css';
 import { theme } from 'styles/theme';
 import { AppProps } from 'next/app';
 import { ChakraProvider } from '@chakra-ui/react';
-import { AuthProvider } from 'context/AuthContext';
+import { AuthProvider } from 'contexts/AuthContext';
 import { GlobalLoader } from 'components/GlobalLoader';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { QueryClient, QueryClientProvider } from 'react-query';

@@ -17,7 +17,18 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext",
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "paths": {
+      "@/components/*": ["components/*"],
+      "@/config/*": ["config/*"],
+      "@/contexts/*": ["contexts/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/lib/*": ["lib/*"],
+      "@/models/*": ["models/*"],
+      "@/screens/*": ["screens/*"],
+      "@/styles/*": ["styles/*"],
+      "@/utils/*": ["utils/*"]
+    }
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts", "**/*.tsx"]

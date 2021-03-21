@@ -30,5 +30,3 @@ export const theme = extendTheme({
   fontSizes,
   breakpoints,
 });
-
-export default theme;

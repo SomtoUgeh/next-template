@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { config } from 'config';
 import jwt_decode from 'jwt-decode';
+import { config } from '@/config/index';
 import { useRouter } from 'next/router';
-import { get_token } from 'lib/utils/auth';
-import { useAuth } from 'contexts/AuthContext';
+import { FullPageSpinner } from './Loaders';
+import { get_token } from '@/lib/utils/auth';
+import { useAuth } from '@/contexts/AuthContext';
 import { useIdleTimer } from 'react-idle-timer';
-import { useUserDetails } from 'lib/queries/auth';
-import { FullPageSpinner } from 'components/Loaders';
+import { useUserDetails } from '@/lib/queries/auth';
 
 function checkTokenIsValid(actionFn: () => void) {
   const token = get_token();

@@ -1,4 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/en/configuration.html
@@ -19,11 +18,14 @@ module.exports = {
     '^.+\\.(ts|tsx)$': 'babel-jest',
   },
   watchPlugins: [
+    'jest-watch-select-projects',
     'jest-watch-typeahead/filename',
     'jest-watch-typeahead/testname',
   ],
   moduleNameMapper: {
+    '^@[/](.+)': '<rootDir>/src/$1',
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
   },
   moduleDirectories: ['node_modules', 'src'],
+  snapshotSerializers: ['@emotion/jest'],
 };

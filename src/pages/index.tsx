@@ -1,4 +1,4 @@
-import { ProtectedRoutes } from 'components/Routes.config';
+import { ProtectedRoutes } from '@/components/Routes.config';
 
 const App = () => {
   return (

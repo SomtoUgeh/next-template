@@ -1,4 +1,4 @@
-import { AuthRoutes } from 'components/Routes.config';
+import { AuthRoutes } from '@/components/Routes.config';
 
 const Login = () => {
   return (

@@ -1,7 +1,7 @@
 import { config } from 'config';
 import { get_token } from './auth';
 import axios, { AxiosRequestConfig } from 'axios';
-import { ApiHeader, OptionsArgs } from 'models/client';
+import { ApiHeader, OptionsArgs } from '@/models/client';
 
 /** Axios interceptors to transform error message for clientFn */
 axios.interceptors.response.use(

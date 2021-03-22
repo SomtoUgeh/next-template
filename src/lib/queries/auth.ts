@@ -1,5 +1,5 @@
-import * as authClient from 'lib/api/auth';
-import { LoginInterface } from 'models/auth';
+import * as authClient from '@/lib/api/auth';
+import { LoginInterface } from '@/models/auth';
 import {
   useQuery,
   useMutation,

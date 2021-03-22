@@ -1,8 +1,8 @@
-import { config } from 'config';
 import Cookies from 'js-cookie';
-import { client } from 'lib/utils/client';
+import { config } from 'config';
 import { get_token } from '../utils/auth';
-import { LoginInterface } from 'models/auth';
+import { client } from '@/lib/utils/client';
+import { LoginInterface } from '@/models/auth';
 
 async function getUser(): Promise<any> {
   const token = get_token();

@@ -1,6 +1,6 @@
+import { Spinner } from './Loaders';
 import { css } from '@emotion/react';
 import { useIsFetching } from 'react-query';
-import { Spinner } from './Loaders';
 
 export function GlobalLoader() {
   const isFetching = useIsFetching();
@@ -11,6 +11,7 @@ export function GlobalLoader() {
         top: 0.5rem;
         right: 0.5rem;
         position: absolute;
+        transition: 0.3s ease;
         vertical-align: middle;
       `}
       style={{

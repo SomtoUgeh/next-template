@@ -1,6 +1,6 @@
-import { useQuery, useQueryClient } from 'react-query';
 import * as authClient from '@/lib/api/auth';
 import { FullPageSpinner } from '@/components/Loaders';
+import { useQuery, useQueryClient } from 'react-query';
 import { createContext, PropsWithChildren, useContext, useState } from 'react';
 
 interface AuthContextInterface {

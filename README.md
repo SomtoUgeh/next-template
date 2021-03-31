@@ -1,9 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with
-[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next app template
 
-## Getting Started
-
-First, run the development server:
+In the project directory, you can run:
 
 ```bash
 npm run dev
@@ -14,35 +11,47 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 result.
 
-You can start editing the page by modifying `pages/index.js`. The page
-auto-updates as you edit the file.
+The page will reload if you make edits. <br /> You will also see any lint errors
+in the console.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello). This
-endpoint can be edited in `pages/api/hello.js`.
+## Structure
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are
-treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead
-of React pages.
+### Auth
 
-## Learn More
+Auth protection is handled in the base `Routes.config.tsx` file. Frontend checks
+for boolean flag from server to ensure the user is verified and then pushed to
+authenticated app.
 
-To learn more about Next.js, take a look at the following resources:
+### Server state management
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Interaction with the server and storage of server state is handled in the `lib/`
+folder. This contains 3 folders: `api/`, `queries/` and `utils/`. `api/`
+contains api routes for resources. `queries/` contains server state
+implementation using [react-query](https://react-query.tanstack.com/overview)
 
-You can check out
-[the Next.js GitHub repository](https://github.com/vercel/next.js/) - your
-feedback and contributions are welcome!
+### State management
 
-## Deploy on Vercel
+State management is handled with react. `useState` `useReducer` and `useContext`
+are used in this project. Contexts are setup in the `contexts/` folder and
+reducers are setup in the `reducer/` folder.
 
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
+### UI
 
-Check out our
-[Next.js deployment documentation](https://nextjs.org/docs/deployment) for more
-details.
+User interface is built using Styled Components and Chakra UI as the component
+library of choice. Global/base styles are located in the `styles/` folder
+
+### Routes
+
+Routes are setup in the `routes/` folder. `routes.config` contains all the
+routes and respective components in this projects.
+
+### Linting
+
+ESLint, Prettier, husky and lint-staged are used in this project. Check
+`package.json` and `rc` files for rules. There are also git hooks setup on
+commit and push
+
+### Others
+
+Assets are located at `assets/`. Utils functions are located at `utils/` and
+components are located at `components/`

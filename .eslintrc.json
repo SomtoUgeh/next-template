@@ -43,6 +43,7 @@
         "plugin:@typescript-eslint/recommended"
       ],
       "rules": {
+        "react/self-closing-comp": ["error", { "component": true, "html": false }],
         "@typescript-eslint/indent": 0,
         "@typescript-eslint/no-explicit-any": 0,
         "@typescript-eslint/no-var-requires": 0,
